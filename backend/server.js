@@ -157,9 +157,9 @@ io.on('connection', (socket) => {
   });
 });
 
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+// });
 
 server.listen(port, () => {
   console.log(`Now listening on port ${port}`);
