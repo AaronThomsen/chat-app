@@ -27,7 +27,7 @@ mongoose
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/', express.static(path.join(__dirname, 'angular', 'index.html')));
+app.use('/', express.static(path.join(__dirname, 'index.html')));
 
 app.post('/login', (req, res, next) => {
   let fetchedUser;
