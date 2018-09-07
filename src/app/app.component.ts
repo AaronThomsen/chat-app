@@ -49,12 +49,14 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewChecked {
     socket.on('newLogin_Personal', () => {
       const newDiv = this.renderer.createElement('div');
       const html = '' +
+        '<hr style="width: 80%; border-color: black">' +
         '<h2 style="text-decoration: underline">Welcome!</h2>' +
         '<div style="font-size: .5em;margin-bottom:1em;"><i>This application was built with the MEAN stack</i></div>' +
         '<p>The following formatting is supported:</p>' +
         '<div><b>Bold</b> like **this**</div>' +
         '<div><i>Italicize</i> like >>this>></div>' +
-        '<div><del>Strike</del> like --this--</div>';
+        '<div><del>Strike</del> like --this--</div>' +
+        '<hr style="width: 80%; border-color: black">';
       const styles = 'margin: .75em 0 .75em 0; text-align: center; font-family: \'Fjalla One\', sans-serif;';
 
       this.renderer.setProperty(newDiv, 'style', styles);
