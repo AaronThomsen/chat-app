@@ -1,0 +1,20 @@
+.modal-header {
+  background-color: lightsteelblue;
+  height: 1em;
+}
+
+.modal-header button {
+  margin-top: -1.2em;
+}
+
+.modal-header button:focus {
+  outline: 0;
+}
+
+form {
+  margin-top: 1em;
+}
+
+.error-message {
+  color: crimson;
+}

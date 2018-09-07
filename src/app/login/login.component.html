@@ -1,0 +1,124 @@
+<div class="modal-header">
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <ngb-tabset>
+    <ngb-tab title="Login">
+      <ng-template ngbTabContent>
+        <form
+          (ngSubmit)="onLogin(loginForm)"
+          class="container"
+          #loginForm="ngForm">
+
+          <div class="form-group">
+            <label for="username-login">Username</label>
+            <input
+              id="username-login"
+              #usernameLogin="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="Enter your username"
+              maxLength="15"
+              required
+              name="username-login"
+              ngModel>
+          </div>
+
+          <small class="error-message" *ngIf="usernameLogin.invalid && (usernameLogin.dirty || usernameLogin.touched)">Please enter a valid username</small>
+
+          <div class="form-group">
+            <label for="password-login">Password</label>
+            <input
+              type="password"
+              id="password-login"
+              #passwordLogin="ngModel"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+              name="password-login"
+              ngModel>
+          </div>
+
+          <small class="error-message" *ngIf="passwordLogin.invalid && (passwordLogin.dirty || passwordLogin.touched)">Please enter a password</small>
+
+          <div class="alert alert-danger" *ngIf="!isValid">
+            {{ errorMessage }}
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-outline-info float-right mb-3"
+            [disabled]="loginForm.invalid">Submit</button>
+
+        </form>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Register">
+      <ng-template ngbTabContent>
+        <form
+          class="container"
+          #registerForm="ngForm"
+          (ngSubmit)="onRegister(registerForm)">
+
+          <div class="form-group">
+            <label for="username-register">Username</label>
+            <input
+              type="text"
+              id="username-register"
+              #usernameRegister="ngModel"
+              class="form-control"
+              placeholder="Enter a new username"
+              maxLength="15"
+              required
+              name="username-register"
+              ngModel>
+          </div>
+
+          <small class="error-message" *ngIf="usernameRegister.invalid && (usernameRegister.dirty || usernameRegister.touched)">Please enter a valid username</small>
+
+          <div class="form-group">
+            <label for="password-register">Password</label>
+            <input
+              type="password"
+              id="password-register"
+              #passwordRegister1="ngModel"
+              class="form-control"
+              placeholder="Enter a password"
+              required
+              name="password-register"
+              ngModel>
+            <input
+              type="password"
+              #passwordRegister2="ngModel"
+              class="form-control mt-2"
+              placeholder="Re-enter password"
+              name="password-register-confirm"
+              required
+              ngModel>
+          </div>
+
+          <small class="error-message"
+                 *ngIf="(passwordRegister1.invalid && (passwordRegister1.dirty || passwordRegister1.touched)) ||
+                        (passwordRegister2.invalid && (passwordRegister2.dirty || passwordRegister2.touched))">Please enter your password</small>
+
+          <div class="alert alert-danger" *ngIf="!isValid">
+            {{ errorMessage }}
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-outline-info float-right mb-3"
+            [disabled]="registerForm.invalid"
+          >Create Account</button>
+
+        </form>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+
+

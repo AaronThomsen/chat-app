@@ -1,0 +1,15 @@
+.navbar-brand {
+  font-size: 2.5em;
+  font-family: 'Lobster', cursive;
+}
+
+nav {
+  height: 8vh;
+  border-bottom: 1px solid darkslategray;
+  background-color: #E5FDFF !important;
+}
+
+.username {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+}

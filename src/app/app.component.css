@@ -1,0 +1,102 @@
+.chat {
+  display: flex;
+  height: 92vh;
+}
+
+.users {
+  background-color: whitesmoke;
+}
+
+.chat-right {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+}
+.messages {
+  overflow-y: scroll;
+  flex-grow: 1;
+  height: 92vh;
+  background-color: whitesmoke;
+  background-image: linear-gradient(to right top, #357175, #367d89, #3a899f, #4494b5, #559fcb);
+}
+
+.message {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: .75em;
+}
+
+/*.message:not(:last-child) {*/
+/*margin-bottom: .75em;*/
+/*}*/
+
+.message-timestamp {
+  flex-shrink: 0; /* Want timestamp to always have same width */
+  font-weight: bold;
+  font-size: 10px;
+  color: cornsilk;
+  vertical-align: top;
+  margin: 0 .5em 0 .5em;
+}
+
+.message-author {
+  margin-right: .5em;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.message-content {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.send-message {
+  display: flex;
+  padding: 4px 0 4px 0;
+}
+
+.send-message-username {
+  align-self: center;
+  margin: 0 2px 0 2px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.send-message-input {
+  flex-grow: 2;
+}
+
+.send-message-input:focus {
+  outline-width: 1px;
+}
+
+.btn {
+  border-radius: 0;
+  border: 0 none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 2px 0 2px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none !important;
+}
+
+.btn-primary {
+  background: #0099cc;
+  color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+  background: #007299;
+  box-shadow: none;
+}
+
+.chat-notification-small {
+  font-style: italic;
+  font-size: small;
+  margin: .5em 0 .5em .5em;
+}

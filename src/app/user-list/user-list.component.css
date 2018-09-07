@@ -1,0 +1,11 @@
+* {
+  text-align: center;
+}
+
+.card {
+  border-radius: 0px !important;
+}
+
+li {
+  font-family: 'Fira Sans', sans-serif;
+}
