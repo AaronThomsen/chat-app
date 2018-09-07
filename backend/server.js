@@ -158,7 +158,7 @@ io.on('connection', (socket) => {
 });
 
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, 'angular', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
 server.listen(port, () => {
