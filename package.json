@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node backend/server.js",
-    "postinstall": "ng build --output-path backendgit ",
+    "postinstall": "ng build --output-path backend",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
