@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 # Personal
-src/app/backend/nodemon.json
+backend/nodemon.json
