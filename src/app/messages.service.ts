@@ -39,7 +39,7 @@ export class MessagesService implements OnInit {
   }
 
   filterMessage(message: Message) {
-    // Note that below RE's turn off greedy matching
+    // Note that below 3 RE's turn off greedy matching
     // to catch all possible instances of formatting
     // appropriately
 
@@ -47,12 +47,16 @@ export class MessagesService implements OnInit {
     const boldRE = /\*{2}(.+?)\*{2}/g;
     message.content = message.content.replace(boldRE, '<b>$1</b>');
 
-    // Filter for italics -> Ex] >>italicized text>>
-    const italicsRE = />{2}(.+?)>{2}/g;
+    // Filter for italics -> Ex] __italicized text__
+    const italicsRE = /_{2}(.+?)_{2}/g;
     message.content = message.content.replace(italicsRE, '<i>$1</i>');
 
     // Filter for del -> Ex] --del text--
     const delRE = /-{2}(.+?)-{2}/g;
     message.content = message.content.replace(delRE, '<del>$1</del>');
+
+    // Filter for image
+    const imgRE = /^\/img (.+)$/;
+    message.content = message.content.replace(imgRE, '<img height="100" src="$1">');
   }
 }

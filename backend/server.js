@@ -27,11 +27,10 @@ mongoose
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '..', 'dist')));
+app.use(express.static(path.join(__dirname, '..', process.env.ANGULAR_FOLDER)));
 
 app.post('/login', (req, res, next) => {
   let fetchedUser;
-  console.log(req.body);
 
   User.findOne({
     username: req.body.user.username
@@ -46,9 +45,9 @@ app.post('/login', (req, res, next) => {
     return bcrypt.compare(req.body.user.password, fetchedUser.password);
   }).then(result => {
     if (!result) {
-      return res.status(401).json({
+      return Promise.reject(res.status(401).json({
         message: 'Incorrect password'
-      });
+      }));
     }
 
     const newLoggedInUser = new LoggedInUsers({
@@ -157,8 +156,8 @@ io.on('connection', (socket) => {
   });
 });
 
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+// app.get('', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, '..', process.env.ANGULAR_FOLDER, 'index.html'));
 // });
 
 server.listen(port, () => {

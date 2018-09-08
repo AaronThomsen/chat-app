@@ -54,8 +54,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewChecked {
         '<div style="font-size: .5em;margin-bottom:1em;"><i>This application was built with the MEAN stack</i></div>' +
         '<p>The following formatting is supported:</p>' +
         '<div><b>Bold</b> like **this**</div>' +
-        '<div><i>Italicize</i> like >>this>></div>' +
-        '<div><del>Strike</del> like --this--</div>' +
+        '<div><i>Italicize</i> like __this__</div>' +
+        '<div><del>Strike</del> like --this--</div><br />' +
+        '<div>Post images like this: /img [img src]</div>' +
+        '<small style="font-size: .7em;">For example: /img https://i.imgur.com/sxA4mGu.png</small><br>' +
+        '<small style="font-size: .5em;"><i>(Images are automatically resized to better fit the chat)</i></small>' +
         '<hr style="width: 80%; border-color: black">';
       const styles = 'margin: .75em 0 .75em 0; text-align: center; font-family: \'Fjalla One\', sans-serif;';
 
